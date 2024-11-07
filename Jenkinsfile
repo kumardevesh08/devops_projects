@@ -19,7 +19,7 @@ pipeline {
                 then
                     curl -O https://releases.hashicorp.com/terraform/1.5.3/terraform_1.5.3_linux_amd64.zip
                     unzip terraform_1.5.3_linux_amd64.zip
-                    mv terraform /usr/local/bin/
+                    mv terraform /var/jenkins_home/
                 fi
                 '''
             }
