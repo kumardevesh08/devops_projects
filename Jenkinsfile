@@ -4,6 +4,7 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('Aws_jenkins_users_cred') // Set this to the Jenkins credentials ID for your AWS access key
         AWS_SECRET_ACCESS_KEY = credentials('Aws_jenkins_users_cred') // Set this to the Jenkins credentials ID for your AWS secret key
         TF_VAR_region = 'us-west-2' // Optional: Set this to your AWS region
+        PATH = "/var/jenkins_home:${env.PATH}"
     }
     stages {
         stage('Clone Repository') {
