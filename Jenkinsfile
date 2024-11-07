@@ -27,19 +27,29 @@ pipeline {
 
         stage('Initialize Terraform') {
             steps {
-                sh 'terraform init'
+                dir('/var/jenkins_home/'){
+                    sh 'terraform init'
+
+                }
+                
             }
         }
 
         stage('Plan') {
             steps {
-                sh 'terraform plan'
+                dir('/var/jenkins_home/'){
+                    sh 'terraform plan'
+
+                }
             }
         }
 
         stage('Apply') {
             steps {
-                sh 'terraform apply -auto-approve'
+                dir('/var/jenkins_home/'){
+                    sh 'terrform apply -auto-approve'
+
+                }
             }
         }
     }
