@@ -71,5 +71,10 @@ pipeline {
             }
         }
     }
-
+    post {
+        always {
+            archiveArtifacts artifacts: '**/*.tf', allowEmptyArchive: true
+            cleanWs()
+        }
+    }
 }
