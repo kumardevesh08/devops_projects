@@ -47,7 +47,7 @@ pipeline {
 
         stage('Plan') {
             steps {
-                dir('/var/jenkins_home/'){
+                dir('/var/jenkins_home/proj1'){
                     sh 'terraform plan'
 
                 }
@@ -56,7 +56,7 @@ pipeline {
 
         stage('Apply') {
             steps {
-                dir('/var/jenkins_home/'){
+                dir('/var/jenkins_home/proj1'){
                     sh 'terrform apply -auto-approve'
 
                 }
