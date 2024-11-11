@@ -38,7 +38,7 @@ pipeline {
 
         stage('Initialize Terraform') {
             steps {
-                dir('/var/jenkins_home/'){
+                dir('/var/jenkins_home/proj1'){
                     sh 'terraform init'
 
                 }
