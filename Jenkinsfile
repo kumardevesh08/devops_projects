@@ -25,6 +25,16 @@ pipeline {
                 '''
             }
         }
+        stage('Prepare Project Directory') {
+            steps {
+               sh '''
+                mkdir proj1
+                cd proj1
+                touch main.tf
+                '''
+                
+            }
+        }
 
         stage('Initialize Terraform') {
             steps {
