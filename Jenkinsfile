@@ -28,9 +28,8 @@ pipeline {
         stage('Prepare Project Directory') {
             steps {
                sh '''
-                mkdir proj1
-                cd proj1
-                touch main.tf
+                mkdir /var/jenkins_home/proj1
+                touch /var/jenkins_home/proj1/main.tf
                 '''
                 
             }
