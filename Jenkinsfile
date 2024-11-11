@@ -28,8 +28,16 @@ pipeline {
         stage('Prepare Project Directory') {
             steps {
                sh '''
-                mkdir /var/jenkins_home/proj1
-                touch /var/jenkins_home/proj1/main.tf
+                if [[ ! -d /var/jenkins_home/proj1 ]]
+                then
+                    mkdir /var/jenkins_home/proj1
+                fi
+                if  [[ ! -f /var/jenkins_home/proj1/main.tf ]]
+                then
+                    touch /var/jenkins_home/proj1/main.tf
+                else
+                    echo "main.tf file already exists..skipping this step"
+                fi
                 '''
                 
             }
