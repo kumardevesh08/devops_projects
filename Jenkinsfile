@@ -65,7 +65,7 @@ pipeline {
         stage('Apply') {
             steps {
                 dir('/var/jenkins_home/proj1'){
-                    sh 'terrform apply -auto-approve'
+                    sh 'terraform apply -auto-approve'
 
                 }
             }
